@@ -1,0 +1,9 @@
+FROM erlang
+
+COPY app1.erl app1.erl
+
+RUN erlc app1.erl
+
+EXPOSE 5013
+
+ENTRYPOINT ["erl", "-noshell", "-run", "app1", "start"]
